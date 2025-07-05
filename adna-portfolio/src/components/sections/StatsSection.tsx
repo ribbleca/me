@@ -117,7 +117,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding">
       <div className="max-w-7xl mx-auto container-padding">
         {/* Section Header */}
         <motion.div
@@ -199,7 +199,7 @@ export function StatsSection() {
           <div className="card p-8 bg-gradient-to-r from-primary/5 to-purple-500/5">
             <h3 className="text-2xl font-bold mb-4">Ready to Add Your Project?</h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              These numbers represent my journey so far, but I'm always excited to take on new challenges 
+              These numbers represent my journey so far, but I&apos;m always excited to take on new challenges 
               and create amazing solutions together.
             </p>
             <motion.button

@@ -1,18 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { 
-  ArrowDown, 
   Download, 
   MapPin, 
   Coffee,
   Code,
   Sparkles,
-  ChevronDown,
-  Play
+  ChevronDown
 } from "lucide-react";
-import Image from "next/image";
 import { personalInfo } from "@/data/portfolio";
 import { scrollToElement } from "@/lib/utils";
 
@@ -29,10 +26,9 @@ export function HeroSection() {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [typeSpeed, setTypeSpeed] = useState(150);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
     const handleType = () => {
       const currentText = typewriterTexts[currentTextIndex];
       
@@ -52,8 +48,12 @@ export function HeroSection() {
       }
     };
 
-    timeout = setTimeout(handleType, typeSpeed);
-    return () => clearTimeout(timeout);
+    timeoutRef.current = setTimeout(handleType, typeSpeed);
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, [displayText, isDeleting, currentTextIndex, typeSpeed]);
 
   const scrollToAbout = () => {
@@ -86,7 +86,7 @@ export function HeroSection() {
               >
                 👋
               </motion.span>
-              <span className="text-lg text-muted-foreground">Hello, I'm</span>
+              <span className="text-lg text-muted-foreground">Hello, I&apos;m</span>
             </motion.div>
 
             {/* Name */}
@@ -162,7 +162,7 @@ export function HeroSection() {
                 onClick={() => scrollToElement("contact", 80)}
                 className="btn-primary group"
               >
-                <span>Let's Work Together</span>
+                <span>Let&apos;s Work Together</span>
                 <Sparkles className="ml-2 h-4 w-4 group-hover:animate-pulse" />
               </motion.button>
 

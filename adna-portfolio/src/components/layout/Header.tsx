@@ -10,8 +10,7 @@ import {
   Monitor, 
   Github, 
   Linkedin, 
-  Mail,
-  ExternalLink 
+  Mail
 } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { personalInfo } from "@/data/portfolio";
@@ -77,7 +76,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border shadow-lg"
+          ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-lg"
           : "bg-transparent"
       )}
     >
@@ -195,7 +194,7 @@ export function Header() {
               transition={{ duration: 0.3 }}
               className="md:hidden"
             >
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md rounded-lg mt-2 border border-border">
+              <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-lg mt-2 border border-gray-200 dark:border-gray-800">
                 {navigation.map((item, index) => (
                   <motion.button
                     key={item.name}

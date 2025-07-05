@@ -24,7 +24,7 @@ export function ThemeProvider({
   children,
   attribute = "class",
   defaultTheme = "system",
-  enableSystem = true,
+  enableSystem = true, // eslint-disable-line @typescript-eslint/no-unused-vars
   disableTransitionOnChange = false,
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
@@ -85,18 +85,14 @@ export function ThemeProvider({
     setTheme(newTheme);
   };
 
-  if (!mounted) {
-    return <>{children}</>;
-  }
+  const contextValue = {
+    theme: mounted ? theme : "light" as const,
+    setTheme: handleSetTheme,
+    systemTheme: mounted ? systemTheme : "light" as const,
+  };
 
   return (
-    <ThemeContext.Provider
-      value={{
-        theme,
-        setTheme: handleSetTheme,
-        systemTheme,
-      }}
-    >
+    <ThemeContext.Provider value={contextValue}>
       {children}
     </ThemeContext.Provider>
   );

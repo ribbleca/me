@@ -17,8 +17,12 @@ import {
 } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
 
+interface InterestIcons {
+  [key: string]: React.ComponentType<{ className?: string }>;
+}
+
 export function AboutSection() {
-  const interestIcons: { [key: string]: any } = {
+  const interestIcons: InterestIcons = {
     "Artificial Intelligence": Code2,
     "User Experience Design": User,
     "Photography": Camera,
@@ -205,7 +209,7 @@ export function AboutSection() {
                 </motion.div>
                 <h3 className="text-lg font-semibold mb-2">Currently Available</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  I'm open to new opportunities and exciting projects. Let's create something amazing together!
+                  I&apos;m open to new opportunities and exciting projects. Let&apos;s create something amazing together!
                 </p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}

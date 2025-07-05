@@ -156,7 +156,7 @@ export function Footer() {
             >
               © {currentYear} {personalInfo.name}. Made with{" "}
               <Heart className="inline h-4 w-4 text-red-500 mx-1" />
-              using Next.js & Tailwind CSS
+              using Next.js &amp; Tailwind CSS
             </motion.p>
             
             <motion.button

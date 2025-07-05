@@ -740,7 +740,7 @@ export const seoConfig: SEOConfig = {
   locale: "en_US"
 };
 
-export default {
+const portfolioData = {
   personalInfo,
   socialLinks,
   technologies,
@@ -756,3 +756,5 @@ export default {
   stats,
   seoConfig
 };
+
+export default portfolioData;

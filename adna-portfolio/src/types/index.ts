@@ -329,4 +329,4 @@ export interface Stats {
   linesOfCode: number;
 }
 
-export default {};
+// Export types only - no default export needed

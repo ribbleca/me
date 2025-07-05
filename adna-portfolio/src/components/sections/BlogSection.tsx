@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function BlogSection() {
   return (
-    <section id="blog" className="section-padding bg-background">
+    <section id="blog" className="section-padding">
       <div className="max-w-7xl mx-auto container-padding">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
